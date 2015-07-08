@@ -6,7 +6,8 @@ LIC_FILES_CHKSUM = "file://LICENSE.GPLv3;md5=5ed852a46d22220a8b07a68e564d84c7"
 SRCREV="${AUTOREV}"
 PR = "r0"
 DESTDIR = "enigma2/python/Plugins/Extensions/HbbTV"
-SRC_URI = "git://192.168.1.158/code.vuplus.com.git.dumpait.git;branch=master"
+
+SRC_URI = "git://github.com/wslee2/code.vuplus.com.git.dumpait.git"
 
 inherit autotools pkgconfig
 

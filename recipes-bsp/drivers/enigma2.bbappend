@@ -1,7 +1,7 @@
 BRAND_TYPE?="iqon"
 
 ENIGMA2_BRANCH ?= "master"
-SRC_URI="git://192.168.1.158/enigma2.pli4.0.git;branch=${ENIGMA2_BRANCH} \
+SRC_URI="git://github.com/wslee2/enigma2.git;branch=${ENIGMA2_BRANCH} \
          file://PPanel_tutorial.xml \
          file://CCcam.xml \
          file://enigma2_pre_start.sh \

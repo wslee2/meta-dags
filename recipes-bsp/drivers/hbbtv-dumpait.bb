@@ -4,7 +4,8 @@ PRIORITY = "required"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://LICENSE.GPLv3;md5=5ed852a46d22220a8b07a68e564d84c7"
 
-SRC_URI = "git://192.168.1.158/hbbtv-dumpait"
+SRC_URI = "git://github.com/wslee2/hbbtv-dumpait.git"
+
 S = "${WORKDIR}/git"
 DESTDIR = "enigma2/python/Plugins/Extensions/HbbTV"
 
