@@ -1,0 +1,78 @@
+diff --git a/INSTALL b/INSTALL
+index a1e89e1..2099840 100644
+--- a/INSTALL
++++ b/INSTALL
+@@ -1,7 +1,7 @@
+ Installation Instructions
+ *************************
+ 
+-Copyright (C) 1994-1996, 1999-2002, 2004-2011 Free Software Foundation,
++Copyright (C) 1994-1996, 1999-2002, 2004-2013 Free Software Foundation,
+ Inc.
+ 
+    Copying and distribution of this file, with or without modification,
+@@ -12,8 +12,8 @@ without warranty of any kind.
+ Basic Installation
+ ==================
+ 
+-   Briefly, the shell commands `./configure; make; make install' should
+-configure, build, and install this package.  The following
++   Briefly, the shell command `./configure && make && make install'
++should configure, build, and install this package.  The following
+ more-detailed instructions are generic; see the `README' file for
+ instructions specific to this package.  Some packages provide this
+ `INSTALL' file but do not implement all of the features documented
+@@ -309,9 +309,10 @@ causes the specified `gcc' to be used as the C compiler (unless it is
+ overridden in the site shell script).
+ 
+ Unfortunately, this technique does not work for `CONFIG_SHELL' due to
+-an Autoconf bug.  Until the bug is fixed you can use this workaround:
++an Autoconf limitation.  Until the limitation is lifted, you can use
++this workaround:
+ 
+-     CONFIG_SHELL=/bin/bash /bin/bash ./configure CONFIG_SHELL=/bin/bash
++     CONFIG_SHELL=/bin/bash ./configure CONFIG_SHELL=/bin/bash
+ 
+ `configure' Invocation
+ ======================
+@@ -367,4 +368,3 @@ operates.
+ 
+ `configure' also accepts some other, not widely useful, options.  Run
+ `configure --help' for more details.
+-
+diff --git a/src/eFilePumpThread.cpp b/src/eFilePumpThread.cpp
+index 4cd7fa6..7c5130a 100644
+--- a/src/eFilePumpThread.cpp
++++ b/src/eFilePumpThread.cpp
+@@ -12,6 +12,7 @@
+ #include <poll.h>
+ #include <stdio.h>
+ #include <fcntl.h>
++#include <unistd.h>
+ 
+ #include "ePreDefine.h"
+ #include "eFilePumpThread.h"
+diff --git a/src/eNetworkPumpThread.cpp b/src/eNetworkPumpThread.cpp
+index dc8972e..5596174 100644
+--- a/src/eNetworkPumpThread.cpp
++++ b/src/eNetworkPumpThread.cpp
+@@ -12,6 +12,7 @@
+ #include <stdio.h>
+ #include <errno.h>
+ #include <string.h>
++#include <unistd.h>
+ #include <sys/ioctl.h>
+ 
+ #include "ePreDefine.h"
+diff --git a/src/main.cpp b/src/main.cpp
+index 967b64b..7d44ea9 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -11,6 +11,7 @@
+ #include <poll.h>
+ #include <stdlib.h>
+ #include <sys/ioctl.h>
++#include <unistd.h>
+ 
+ #include <vector>
+ #include <string>

@@ -1,0 +1,191 @@
+diff --git a/plugin/controllers/ajax.py b/plugin/controllers/ajax.py
+index 29c3d25..d66fc08 100644
+--- a/plugin/controllers/ajax.py
++++ b/plugin/controllers/ajax.py
+@@ -60,9 +60,12 @@ class AjaxController(BaseController):
+ 		channels = getChannels(idbouquet, stype)
+ 		info = getInfo()
+ 		model = info["model"]
++		chipset = info["chipset"] # for chipset 7356 transcoding
+ 		channels['transcoding'] = False
+-		if model in ("solo2", "duo2", "solose", "vusolo2", "vuduo2", "vusolose", "xpeedlx3", "gbquad", "gbquadplus"):
++		if model in ("solo2", "duo2", "solose", "vusolo2", "vuduo2", "vusolose", "xpeedlx3", "gbquad", "gbquadplus") or chipset in ("7356"):
+ 			channels['transcoding'] = True
++#		print "@@@@@@@@@@@@ chipset @@@@@@@@@@@@@@@", chipset 
++
+ 		return channels
+ 
+ 	def P_eventdescription(self, request):
+@@ -94,6 +97,35 @@ class AjaxController(BaseController):
+ 			model = "topf"
+ 		elif model.startswith("vu"):
+ 			model = model.replace("vu", "")
++		if fileExists("/etc/.brand"):
++			ret_brand = open("/etc/.brand").read().strip().lower()
++			if ret_brand == "technomate":
++				if model in ("force1", "force1plus"):
++					model = "te_" + model
++			elif ret_brand == "edision":
++				if model.endswith("OS1"):
++					model = "ed_os1"
++				elif model.endswith("OS2"):
++					model = "ed_os2"
++				elif model.endswith("OS1PLUS"):
++					model = "ed_os1plus"
++				elif model.endswith("OS2PLUS"):
++					model = "ed_os2plus"
++				elif model.endswith("OS3"):
++					model = "ed_os3"
++				elif model in ("force1", "force1plus"):
++					model = "ed_" + model
++			elif ret_brand == "worldvision":
++				if model in ("force1", "force1plus"):
++					model = "wo_" + model
++			elif ret_brand.startswith == "swiss":
++				if model in ("force1", "force1plus"):
++					model = "sw_" + model
++			elif ret_brand.startswith == "iqon":
++				if model in ("force1", "force1plus"):
++					model = "iq_" + model
++			else:
++				model = info["model"]
+ 		if fileExists(getPublicPath("/images/boxes/" + model + ".jpg")):
+ 			info["boximage"] = model + ".jpg"
+ 		else:
+@@ -114,7 +146,9 @@ class AjaxController(BaseController):
+ 	def P_screenshot(self, request):
+ 		box = {}
+ 		box['brand'] = "dmm"
+-		if fileExists("/proc/stb/info/vumodel"):
++		if fileExists("/proc/stb/info/hwmodel"): # box brand
++			box['brand'] = "4d"
++		elif fileExists("/proc/stb/info/vumodel"):
+ 			box['brand'] = "vuplus"
+ 		elif fileExists("/proc/stb/info/azmodel"):
+ 			box['brand'] = "azbox"
+@@ -135,8 +169,9 @@ class AjaxController(BaseController):
+ 			movies = getMovieList()
+ 		info = getInfo()
+ 		model = info["model"]
++		chipset = info["chipset"]
+ 		movies['transcoding'] = False
+-		if model in ("solo2", "duo2", "solose", "vusolo2", "vuduo2", "vusolose", "xpeedlx3", "gbquad", "gbquadplus"):
++		if model in ("solo2", "duo2", "solose", "vusolo2", "vuduo2", "vusolose", "xpeedlx3", "gbquad", "gbquadplus") or chipset in ("7356"): # 7356 model default transcoding
+ 			movies['transcoding'] = True
+ 		return movies
+ 
+diff --git a/plugin/controllers/base.py b/plugin/controllers/base.py
+index 2c579c6..38fd827 100755
+--- a/plugin/controllers/base.py
++++ b/plugin/controllers/base.py
+@@ -138,7 +138,6 @@ class BaseController(resource.Resource):
+ 							out = nout
+ 					request.write(out)
+ 					request.finish()
+-				
+ 		else:
+ 			print "[OpenWebif] page '%s' not found" % request.uri
+ 			self.error404(request)
+@@ -158,10 +157,15 @@ class BaseController(resource.Resource):
+ 		ret['configsections'] = getConfigsSections()['sections']
+ 		ret['zapstream'] = getZapStream()['zapstream']
+ 		ret['box'] = "dmm"
+-#		if open("/proc/stb/info/model",'r').read().strip().lower() == "gigablue":
+-#			ret['box'] = "gigablue"
+-		if fileExists("/etc/.box"):
++
++		if open("/proc/stb/info/model",'r').read().strip().lower() == "gigablue":
++			ret['box'] = "gigablue"
++		elif fileExists("/etc/.box"):
+ 			ret['box'] = open("/etc/.box").read().strip().lower()
++		elif fileExists("/etc/.brand"):
++			ret_brand = open("/etc/.brand").read().strip().lower()
++		elif fileExists("/proc/stb/info/chipset"):
++			chipset = open("/proc/stb/info/chipset").read().strip().lower()
+ 		elif fileExists("/proc/stb/info/boxtype"):
+ 			ret['box'] = open("/proc/stb/info/boxtype").read().strip().lower()
+ 		elif fileExists("/proc/stb/info/vumodel"):
+@@ -170,8 +174,29 @@ class BaseController(resource.Resource):
+ 			ret['box'] = open("/proc/stb/info/azmodel").read().strip().lower()
+ 		elif fileExists("/proc/stb/info/model"):
+ 			ret['box'] = open("/proc/stb/info/model").read().strip().lower()
+-			
+-		if ret["box"] in ("vusolo", "vuduo", "vuuno", "vusolo2", "vuduo2", "vusolose", "solo", "duo", "uno", "solo2", "duo2", "solose"):
++
++		if ret_brand == "technomate":
++				if open("/proc/stb/info/hwmodel","r").read().strip().lower() in ("tmnanooe","tmsingle"):
++					ret["remote"] = "te_type1"
++				else:
++					if open("/proc/stb/info/hwmodel","r").read().strip().lower() in ("force1", "force1plus","tmnano2super"):
++						ret["remote"] = "te_type2"
++					else:
++						ret["remote"] = "te_type0"
++		elif ret_brand == "swiss":
++			if open("/proc/stb/info/hwmodel","r").read().strip().lower() in ("force1plus", "force1"):
++				ret["remote"] = "sw_type0"
++		elif ret_brand == "edision":
++			if open("/proc/stb/info/hwmodel","r").read().strip().lower() in ("force1plus"):
++				ret["remote"] = "ed_type0"
++			if chipset == "7335" or open("/proc/stb/info/hwmodel","r").read().strip().lower() in ("optimussos1plus", "optimussos2plus"):
++				ret["remote"] == "ed_type1"
++		elif ret_brand == "worldvision":
++			if open("/proc/stb/info/hwmodel","r").read().strip().lower() in ("force1plus", "force1"):
++				ret["remote"] = "wo_type0"
++		elif ret_brand == "iqon":
++			ret["remote"] = "iqon" 
++		elif ret["box"] in ("vusolo", "vuduo", "vuuno", "vusolo2", "vuduo2", "vusolose", "solo", "duo", "uno", "solo2", "duo2", "solose"):
+ 			ret["remote"] = "vu_normal"
+ 		elif ret["box"] in ("vuultimo", "ultimo"):
+ 			ret["remote"] = "vu_ultimo"
+diff --git a/plugin/controllers/models/info.py b/plugin/controllers/models/info.py
+index 38445b0..31b0cd3 100644
+--- a/plugin/controllers/models/info.py
++++ b/plugin/controllers/models/info.py
+@@ -155,6 +155,23 @@ def getInfo():
+ 		elif model.startswith("spark"):
+ 			brand = "Fulan"
+ 			chipset = "SH4 @450MHz"
++	elif fileExists("/proc/stb/info/hwmodel",'r'): # divide to brand model.
++		f = open("/proc/stb/info/hwmodel",'r')
++		f_model = f.readline().strip().lower()
++		if f_model.startswith("me"):
++			model = "Mediabox HD LX-1"
++			brand = "Jepssen"
++		elif f_model.startswith("op"):
++			model = model[0:1].upper() + model[0:8].lower() + " " + model[8:].upper() # optimussos1 ==> Optimuss OS1
++			brand = "Edision"
++		else:
++			model = f_model
++			if fileExists("/etc/.brand"):
++				b = open("/etc/.brand",'r')
++				b_brand = b.readline().strip().lower()
++				brand = b_brand[0:1].upper() + b_brand[1:].lower()
++				b.close()
++		f.close()
+ 	elif fileExists("/proc/stb/info/boxtype"):
+ 		brand = "Xtrend"
+ 		f = open("/proc/stb/info/boxtype",'r')
+diff --git a/plugin/controllers/models/stream.py b/plugin/controllers/models/stream.py
+index 5447fa6..d5a1c2e 100644
+--- a/plugin/controllers/models/stream.py
++++ b/plugin/controllers/models/stream.py
+@@ -47,7 +47,8 @@ def getStream(session, request, m3ufile):
+ 	portNumber = config.OpenWebif.streamport.value
+ 	info = getInfo()
+ 	model = info["model"]
+-	if model in ("solo2", "duo2", "solose", "vusolo2", "vuduo2", "vusolose", "xpeedlx3", "gbquad", "gbquadplus"):
++	chipset = info["chipset"]
++	if model in ("solo2", "duo2", "solose", "vusolo2", "vuduo2", "vusolose", "xpeedlx3", "gbquad", "gbquadplus") or chipset in ("7356"):
+ 		if "device" in request.args :
+ 			if request.args["device"][0] == "phone" :
+ 				portNumber = 8002
+@@ -79,7 +80,8 @@ def getTS(self, request):
+ 		portNumber = config.OpenWebif.port.value
+ 		info = getInfo()
+ 		model = info["model"]
+-		if model in ("solo2", "duo2", "solose", "vusolo2", "vuduo2", "vusolose", "xpeedlx3", "gbquad", "gbquadplus"):
++		chipset = info["chipset"]
++		if model in ("solo2", "duo2", "solose", "vusolo2", "vuduo2", "vusolose", "xpeedlx3", "gbquad", "gbquadplus") or chipset in ("7356"):
+ 			if "device" in request.args :
+ 				if request.args["device"][0] == "phone" :
+ 					portNumber = 8002

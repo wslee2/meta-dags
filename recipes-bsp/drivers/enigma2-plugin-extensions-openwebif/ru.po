@@ -1,0 +1,584 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWebif\n"
+"POT-Creation-Date: 2013-12-04 20:24+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: ooolexa <ooolexa@gmail.com>\n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ../plugin\n"
+
+msgid "(shift + click for long pressure)"
+msgstr "(shift + кнопка=долгое нажатие)"
+
+msgid "AGC"
+msgstr "AGC"
+
+msgid "About"
+msgstr "О приложении"
+
+msgid "Add Timer"
+msgstr "Добавить таймер"
+
+msgid "Add service name to stream information"
+msgstr "Добавить имя сервиса к стриму"
+
+msgid "After Event"
+msgstr "После события"
+
+msgid "All"
+msgstr "Все"
+
+msgid "All Channels"
+msgstr "Все каналы"
+
+msgid "Authors"
+msgstr "Автор"
+
+msgid "Auto"
+msgstr "Авто"
+
+msgid "BER"
+msgstr "BER"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Begin"
+msgstr "Начало"
+
+msgid "Bouquets"
+msgstr "Фавориты"
+
+msgid "Box"
+msgstr "Ресивер"
+
+msgid "Box Control"
+msgstr "Управление"
+
+msgid "Box Info"
+msgstr "Информация о ресивере"
+
+msgid "Box Uptime"
+msgstr "Время работы ресивера"
+
+msgid "Brand"
+msgstr "Бренд"
+
+msgid "Cable"
+msgstr "Кабельный"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Capacity"
+msgstr "Ёмкость"
+
+msgid "Channel"
+msgstr "Канал"
+
+msgid "Channels"
+msgstr "Каналы"
+
+msgid "Chipset"
+msgstr "Чипсет"
+
+msgid "Cleanup Timers"
+msgstr "Очистить список таймеров"
+
+msgid "Contributors"
+msgstr "Авторы"
+
+msgid "Control"
+msgstr "Контроль"
+
+msgid "Current"
+msgstr "Текущий"
+
+msgid "Current Event"
+msgstr "Текущее событие"
+
+msgid "DHCP"
+msgstr "DHCP"
+
+msgid "Deep-Standby"
+msgstr "Выключение"
+
+msgid "Default"
+msgstr "По умолчанию"
+
+msgid "Delete Movie"
+msgstr "Удалить фильм"
+
+msgid "Delete Timer"
+msgstr "Удалить таймер"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Disable Timer"
+msgstr "Выключить таймер"
+
+msgid "Dolby"
+msgstr "Dolby"
+
+msgid "Download"
+msgstr "Загрузить"
+
+msgid "Download Playlist for"
+msgstr "Загрузить плейлист для"
+
+msgid "Duration"
+msgstr "Продолжительность"
+
+msgid "E"
+msgstr "Вост."
+
+msgid "EPG"
+msgstr "EPG"
+
+msgid "Edit Timer"
+msgstr "Редактировать таймер"
+
+msgid "Enable Authentication for streaming"
+msgstr "Включить аутентификацию для потоковой передачи"
+
+msgid "Enable Http Authentication"
+msgstr "Включить http аунтификацию"
+
+msgid "Enable Https"
+msgstr "Включить https"
+
+msgid "Enable Parental Control"
+msgstr "Включить родительский контроль"
+
+msgid "Enable Timer"
+msgstr "Включить таймер"
+
+msgid "Enabled"
+msgstr "Включен"
+
+msgid "Encrypted"
+msgstr "Кодированый"
+
+msgid "End"
+msgstr "Окончание"
+
+msgid "Epg Search"
+msgstr "EPG-Поиск"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Every"
+msgstr "Каждый"
+
+msgid "Extras"
+msgstr "Экстра"
+
+msgid "Firmware version"
+msgstr "Версия ПО"
+
+msgid "Fr"
+msgstr "Птн."
+
+msgid "Free"
+msgstr "Свободно"
+
+msgid "Free Memory"
+msgstr "Свободно памяти"
+
+msgid "Friday"
+msgstr "Пятница"
+
+msgid "Frontprocessor Version"
+msgstr "Версия фронтпроцессора"
+
+msgid "Gateway"
+msgstr "Шлюз"
+
+msgid "Grab Screenshot"
+msgstr "Сделать скриншот"
+
+msgid "Gui version"
+msgstr "Версия енигмы"
+
+msgid "Hard disk model"
+msgstr "Модель HDD"
+
+msgid "Hide full remote"
+msgstr "Скрыть полный пульт"
+
+msgid "High Resolution"
+msgstr "Высокое разрешение"
+
+msgid "Http port"
+msgstr "Порт для http"
+
+msgid "Https port"
+msgstr "Порт для https"
+
+msgid "IP address"
+msgstr "IP-адрес"
+
+msgid "Infos"
+msgstr "Информация"
+
+msgid "Instant Record"
+msgstr "Мгновенная запись"
+
+msgid "Javascript Libraries"
+msgstr "Javascript-библиотека"
+
+msgid "Just play"
+msgstr "Только проиграть"
+
+msgid "Kernel version"
+msgstr "Версия ядра"
+
+msgid "LICENSE"
+msgstr "Лицензия"
+
+msgid "Location"
+msgstr "Расположение"
+
+msgid "Locked"
+msgstr "Заблокирован"
+
+msgid "MAC address"
+msgstr "Мак адрес"
+
+msgid "Main"
+msgstr "Меню"
+
+msgid "Mo"
+msgstr "Пн."
+
+msgid "Model"
+msgstr "Модель"
+
+msgid "Monday"
+msgstr "Понедельник"
+
+msgid "Movielist"
+msgstr "Список фильмов"
+
+msgid "Movies"
+msgstr "Фильмы"
+
+msgid "MultiEPG"
+msgstr "МултиЕПГ"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Namespace"
+msgstr "Пространство имен"
+
+msgid "Network Interface"
+msgstr "Сетевой интерфейс"
+
+msgid "New"
+msgstr "Новый"
+
+msgid "Nothing"
+msgstr "Ничего"
+
+msgid "Nothing playing."
+msgstr "Нечего играть."
+
+msgid "OSD"
+msgstr "OSD"
+
+msgid "Open Source Web Interface for Linux set-top box"
+msgstr "Вэб интерфейс Вашего Force1"
+
+msgid "OpenWebInterface Enabled"
+msgstr "Вэбинтерфейс включен"
+
+msgid "OpenWebif Configuration"
+msgstr "Настройки вэбинтерфейса"
+
+msgid "OpenWebif url: http://yourip:port"
+msgstr "OpenWebif-URL: http://IP ресивера:порт"
+
+msgid "Playlist"
+msgstr "Плейлист"
+
+msgid "Power Control"
+msgstr "Управление питанием"
+
+msgid "Provider"
+msgstr "Провайдер"
+
+msgid "Providers"
+msgstr "Провайдеры"
+
+msgid "Radio"
+msgstr "Радио каналы"
+
+msgid "Reboot Box"
+msgstr "Рестарт ресивера"
+
+msgid "Recording Status"
+msgstr "Состояние записи"
+
+msgid "Refresh"
+msgstr "Обновить"
+
+msgid "Refresh automatically every"
+msgstr "Обновлять автоматически каждые"
+
+msgid "Remote"
+msgstr "Пульт"
+
+msgid "Repeated"
+msgstr "Повторить"
+
+msgid "Restart GUI"
+msgstr "Рестарт GUI"
+
+msgid "SNR"
+msgstr "SNR"
+
+msgid "Sa"
+msgstr "Сб."
+
+msgid "Satellites"
+msgstr "Спутники"
+
+msgid "Satfinder"
+msgstr "Уровень сигнала"
+
+msgid "Saturday"
+msgstr "Суббота"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Screenshot"
+msgstr "Скриншот"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Search IMDb"
+msgstr "Поиск в IMDb"
+
+msgid "Send Message"
+msgstr "Отправить сообщение"
+
+msgid "Send a Message"
+msgstr "Отправить сообщение"
+
+msgid "Service"
+msgstr "Канал"
+
+msgid "Services"
+msgstr "Сервис"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Show EPG for"
+msgstr "Показать ЕПГ для"
+
+msgid "Show Full OpenWebif"
+msgstr "Показать полный OpenWebif"
+
+msgid "Show full remote"
+msgstr "Полный пульт"
+
+msgid "Shutdown"
+msgstr "Выключить"
+
+msgid "Site and sources"
+msgstr "Сайт и исходный код"
+
+msgid "Smart services renaming for XBMC"
+msgstr "Переименовать сервисы для XBMC"
+
+msgid "Software"
+msgstr "Софт"
+
+msgid "Sorry this page is not yet implemented"
+msgstr "К сожалению, эта страница не доступна"
+
+msgid "Standby"
+msgstr "Выключить"
+
+msgid "Standby Toggle"
+msgstr "Режим ожидания"
+
+msgid "Start Instant Record"
+msgstr "Начать запись"
+
+msgid "Stream"
+msgstr "Стрим"
+
+msgid "Su"
+msgstr "Вс."
+
+msgid "Subnet mask"
+msgstr "Маска подсети"
+
+msgid "Subservices"
+msgstr "Подсервисы"
+
+msgid "Sunday"
+msgstr "Воскресенье"
+
+msgid "TV"
+msgstr "ТВ"
+
+msgid "TV Multi EPG"
+msgstr "ТВ-Multi-EPG"
+
+msgid "Tags"
+msgstr "Теги"
+
+msgid "Teletext"
+msgstr "Телетекст"
+
+msgid "Television"
+msgstr "ТВ каналы"
+
+msgid "Template Engine"
+msgstr "Шаблон"
+
+msgid "Terrestrial"
+msgstr "Эфирный"
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "Th"
+msgstr "Чт."
+
+msgid "Thursday"
+msgstr "Четверг"
+
+msgid "Timeout"
+msgstr "Таймаут"
+
+msgid "Timer"
+msgstr "Таймер"
+
+msgid "Timerlist"
+msgstr "Список таймеров"
+
+msgid "Timers"
+msgstr "Таймеры"
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Total Memory"
+msgstr "Всего памяти"
+
+msgid "Tu"
+msgstr "Вт."
+
+msgid "Tuesday"
+msgstr "Вторник"
+
+msgid "Tuner Bit Error Rate BER"
+msgstr "Bit Error Rate - BER"
+
+msgid "Tuner Number (0-3)"
+msgstr "Номер тюнера (0-3)"
+
+msgid "Tuner Signal"
+msgstr "Сигнал тюнера"
+
+msgid "Tuner Signal Power AGC"
+msgstr "AGC"
+
+msgid "Tuner Signal Quality SNR"
+msgstr "SNR"
+
+msgid "Tuner Signal Quality SNR_DB"
+msgstr "SNR_DB"
+
+msgid "Tuner Type"
+msgstr "Тип тюнера"
+
+msgid "Tuners"
+msgstr "Тюнер"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Upcoming Events"
+msgstr "Предстоящие события"
+
+msgid "Version"
+msgstr "Версия"
+
+msgid "Video"
+msgstr "Видео"
+
+msgid "Video Height"
+msgstr "Высота видео"
+
+msgid "Video Wide"
+msgstr "Широкоэкранное"
+
+msgid "Video Width"
+msgstr "Ширина видео"
+
+msgid "Volume"
+msgstr "Уровень"
+
+msgid "Volume Control"
+msgstr "Громкость"
+
+msgid "Volume:"
+msgstr "Уровень"
+
+msgid "W"
+msgstr "Зап."
+
+msgid "Warning"
+msgstr "Внимание"
+
+msgid "We"
+msgstr "Ср."
+
+msgid "Wednesday"
+msgstr "Среда"
+
+msgid "Yes/No"
+msgstr "Да/Нет"
+
+msgid "Zap"
+msgstr "Переключить"
+
+msgid "Zap to"
+msgstr "Перейти к"
+
+msgid "finished"
+msgstr "закончено"
+
+msgid "loading"
+msgstr "загрузка"
+
+msgid "no description available"
+msgstr "нет описания"
+
+msgid "running"
+msgstr "запущен"
+
+msgid "seconds"
+msgstr "секунд"
+
+msgid "waiting"
+msgstr "ожидание"
+
+msgid "zap before Stream"
+msgstr "Переключить перед стримом"
